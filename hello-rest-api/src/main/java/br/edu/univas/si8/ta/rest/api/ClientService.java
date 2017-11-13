@@ -16,7 +16,7 @@ public interface ClientService {
 	String[] listProductNames();
 	
 	@POST
-	@Path("/clients/{name}")
+	@Path("/clients/{name}/{email}")
 	@Produces(MediaType.APPLICATION_JSON)
-	String saveNewProduct(@PathParam("name") String name);
+	String saveNewProduct(@PathParam("name") String name, @PathParam("email") String email);
 }
