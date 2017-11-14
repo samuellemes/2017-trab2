@@ -6,9 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-@Entity(name="clients")
-@SequenceGenerator(name="seq_client", sequenceName="seq_client", allocationSize = 1)
+@Entity(name = "clients")
+@SequenceGenerator(name="seq_client", sequenceName = "seq_client", allocationSize = 1)
 public class Cliente {
+	
 	@Id
 	@GeneratedValue(generator = "seq_client", strategy = GenerationType.SEQUENCE)
 	private Integer id;

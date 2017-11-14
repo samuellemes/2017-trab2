@@ -16,23 +16,22 @@ import br.edu.univas.si8.ta.ejb.interfaces.ClientsRemote;
 @Stateless
 @Local(ClientsLocal.class)
 @Remote(ClientsRemote.class)
-public class ClientBean implements ClientsLocal, ClientsRemote{
+public class ClientBean implements ClientsLocal, ClientsRemote {
 
 	@EJB
 	private ClientDAO dao;
 	
 	@Override
-	public void createNewClient(String clientName, String clientEmail) {
+	public void createNewClient(String name, String email) {
 		Cliente client = new Cliente();
-		client.setName(clientName);
-		client.setEmail(clientEmail);
+		client.setName(name);
+		client.setEmail(email);
 		dao.insert(client);
 	}
 
 	@Override
-	public String[] listClientNames() {
-		List<Cliente> clients = dao.listAll();
-		return clients.stream().map(c -> c.getName()).collect(Collectors.toList()).toArray(new String[0]);
+	public String[] listClientsNames() {
+		return dao.listAll().stream().map(Cliente::getName).collect(Collectors.toList()).toArray(new String[0]);
 	}
 	
 

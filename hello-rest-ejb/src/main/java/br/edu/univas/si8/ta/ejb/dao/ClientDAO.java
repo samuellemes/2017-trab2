@@ -10,7 +10,8 @@ import br.edu.univas.si8.ta.ejb.entities.Cliente;
 
 @Stateless
 public class ClientDAO {
-	@PersistenceContext(unitName="Cliente")
+	
+	@PersistenceContext(unitName = "Cliente")
 	private EntityManager em;
 	
 
