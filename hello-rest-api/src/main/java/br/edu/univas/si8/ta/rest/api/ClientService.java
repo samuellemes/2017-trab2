@@ -11,12 +11,12 @@ import javax.ws.rs.core.MediaType;
 public interface ClientService {
 	
 	@GET
-	@Path("/clients/names")
+	@Path("/client/names")
 	@Produces(MediaType.APPLICATION_JSON)
-	String[] listProductNames();
+	String[] listClientNames();
 	
 	@POST
-	@Path("/clients/{name}/{email}")
+	@Path("/client/{name}/{email}")
 	@Produces(MediaType.APPLICATION_JSON)
-	String saveNewProduct(@PathParam("name") String name, @PathParam("email") String email);
+	String saveNewClient(@PathParam("name") String name, @PathParam("email") String email);
 }
